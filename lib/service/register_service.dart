@@ -12,7 +12,7 @@ class RegisterService{
     if(!isValid) return;
 
     try{
-      await FirebaseAuth.instance //Email ve şifre ile kaydol
+      await FirebaseAuth.instance
           .createUserWithEmailAndPassword(
               email: email, password: password)
           .then((value) {
@@ -21,7 +21,7 @@ class RegisterService{
                       context,
                       MaterialPageRoute(
                           builder: (_) =>
-                              const Home()), //Ana ekrana geç  //Switch to main screen
+                              const Home()),
                       (Route<dynamic> route) => false);
       });
     } on FirebaseAuthException catch (e) {
